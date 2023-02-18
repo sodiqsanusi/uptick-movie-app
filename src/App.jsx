@@ -1,27 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from "react-router-dom";
+import HomePage from './pages/Homepage';
+import SearchPage from './pages/SearchPage';
+import Page404 from "./pages/Page404";
+import Header from "./components/Header";
+import Movie from "./pages/Movie";
 
 function App() {
 
   console.log(process.env.REACT_APP_API_KEY, 'hii');
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Header />
+    <Routes>
+      <Route path='/' element={<HomePage />} />
+      <Route path='/search/:moviename' element={<SearchPage />} />
+      <Route path='/movie/:movie' element={<Movie />} />
+      <Route path='*' element={<Page404 />} />
+    </Routes>
+    </>
+    
   );
 }
 

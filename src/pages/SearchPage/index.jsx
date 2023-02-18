@@ -1,7 +1,13 @@
+import {useParams} from 'react-router-dom';
+
 const SearchPage = () => {
+
+
+  const {moviename} = useParams();
+
   return ( 
     <>
-      SearchPage
+      SearchPage {moviename}
     </>
   );
 }

@@ -11,10 +11,9 @@ const HomePage = () => {
   let api_call = `https://api.themoviedb.org/3/trending/movie/day?api_key=${API_KEY}`;
   let {data, loading, error} = useFetch(api_call);
 
-  let top_five = [];
+  let top_ten = [];
   if(data){
-    top_five = data.results.slice(0, 5);
-    console.log(top_five);
+    top_ten = data.results.slice(0, 10);
   }if(error){
     navigate('/404');
   }
@@ -24,7 +23,7 @@ const HomePage = () => {
     <>
       <SearchMovie />
       { loading && <LoadSpinner />}
-      { data && <MoviesGrid movies={top_five}/>}
+      { data && <MoviesGrid movies={top_ten} heading='Trending Movies Today'/>}
     </>
   );
 }

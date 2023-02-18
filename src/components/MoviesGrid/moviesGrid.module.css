@@ -34,3 +34,24 @@
 }.cardLink:hover, .cardLink:focus{
 
 }
+.details{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: .5em 0;
+  font-weight: 200;
+  font-size: .85rem;
+}
+.detailsBtn{
+  width: 90%;
+  margin: 0 auto .5em;
+  display: block;
+  color: var(--textColor);
+  background-color: var(--overlayColor);
+  padding: .75em 0;
+  text-decoration: none;
+  border-radius: 5px;
+  text-align: center;
+}.detailsBtn:hover, .detailsBtn:focus{
+  background-color: var(--bgColor);
+}

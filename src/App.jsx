@@ -7,8 +7,6 @@ import Movie from "./pages/Movie";
 
 function App() {
 
-  console.log(process.env.REACT_APP_API_KEY, 'hii');
-
   return (
     <>
     <Header />

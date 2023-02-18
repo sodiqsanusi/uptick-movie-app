@@ -1,7 +1,9 @@
+import SearchMovie from "../../components/SearchMovie";
+
 const HomePage = () => {
   return (
     <>
-      Hii, Homepage
+      <SearchMovie />
     </>
   );
 }

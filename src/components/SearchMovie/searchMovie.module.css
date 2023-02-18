@@ -1,0 +1,13 @@
+.container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2em 0;
+}
+.movieInput{
+  width: 95%;
+  padding: 1em;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+}

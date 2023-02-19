@@ -8,7 +8,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(260px, 50%), 1fr));
   grid-gap: 5em 1em;
-  margin-bottom: 2em;
+  padding-bottom: 5em;
 }
 
 .heading{
@@ -18,6 +18,8 @@
 }
 
 .card{
+  min-height: 350px;
+  background-color: var(--overlayColor);
   position: relative;
   border-radius: 12px;
 }.card img{
@@ -31,10 +33,7 @@
   text-decoration: none;
   color: var(--textColor);
   border-radius: 0 0 12px 12px;
-}.cardLink:hover, .cardLink:focus{
-
-}
-.details{
+}.details{
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -43,7 +42,7 @@
   font-size: .85rem;
 }
 .detailsBtn{
-  width: 90%;
+  width: 100%;
   margin: 0 auto .5em;
   display: block;
   color: var(--textColor);

@@ -1,10 +1,8 @@
 import { Link } from 'react-router-dom';
 import styles from './moviesGrid.module.css';
+import noImage from '../../images/no_image.jpg';
 
-
-const MoviesGrid = ({movies, heading}) => {
-
-  let genres = {
+ export let genres = {
     28: 'Action',
     12: 'Adventure',
     16: 'Animation',
@@ -26,6 +24,10 @@ const MoviesGrid = ({movies, heading}) => {
     37: 'Western'
   }
 
+
+const MoviesGrid = ({movies, heading}) => {
+
+
   return ( 
     <main className={styles.container}>
       <h1 className={styles.heading}>{heading}</h1>
@@ -33,7 +35,7 @@ const MoviesGrid = ({movies, heading}) => {
         {movies.map((movie, index) => (
           <li key={index} className={styles.card}>
             <div aria-hidden='true' role='presentation' className={styles.imgContainer}>
-              <img src={`https://image.tmdb.org/t/p/w1280${movie.poster_path}`} alt=''/>
+              <img src={movie.poster_path ? `https://image.tmdb.org/t/p/w1280${movie.poster_path}`: noImage} alt=''/>
             </div>
             <div className={styles.cardLink}>
               <h2>{movie.title}</h2>

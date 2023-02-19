@@ -25,28 +25,34 @@ const Movie = () => {
   }
 
   return (
-    <main>
+    <main className={styles.container}>
       <button
         className={styles.previousBtn}
         onClick={handleClick}
       >Back to previous page</button>
       {loading && <LoadSpinner />}
       {data && (
-        <article>
-          <div aria-hidden='true' role='presentation'><img src={`https://image.tmdb.org/t/p/w1280${data.poster_path}`} alt="" /></div>
-          <section>
-            <h2>{data.title || ''}</h2>
-            <i>{data.tagline || ''}</i>
-            <p>Genre: <span>{genres[data.genres[0].id]}</span></p>
-            <p>Rating: <span>{rating}</span></p>
-            <p>Release Date: <span>{data.release_date}</span></p>
-            
-            <br/>
-            <p>{data.overview}</p>
+        <article className={styles.articleContainer}>
+          <div aria-hidden='true' role='presentation' className={styles.moviePoster}><img src={`https://image.tmdb.org/t/p/w1280${data.poster_path}`} alt="" /></div>
+          <section className={styles.movieArticle}>
+            <div>
+              <div className={styles.movieArticle1}>
+                <h2>{data.title || ''}</h2>
+                <p>{data.tagline || ''}</p>
+              </div>
+              <div className={styles.movieArticle2}>
+                <p>Genre: <span>{genres[data.genres[0].id]}</span></p>
+                <p>Rating: <span>{rating}</span></p>
+                <p>Release Date: <span>{data.release_date}</span></p>
+              </div>
+            </div>
+            <div className={styles.movieArticle3}>
+              <h3>Plot</h3>
+              <p>{data.overview}</p>
+            </div>
           </section>
         </article>
       )}
-      Particular movie: {movie}
     </main>
    );
 }

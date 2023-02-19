@@ -8,7 +8,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(260px, 50%), 1fr));
   grid-gap: 5em 1em;
-  margin-bottom: 2em;
+  padding-bottom: 5em;
 }
 
 .heading{

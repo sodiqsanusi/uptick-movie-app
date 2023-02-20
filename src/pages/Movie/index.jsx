@@ -3,6 +3,7 @@ import LoadSpinner from "../../components/LoadSpinner";
 import useFetch from "../../hooks/useFetch";
 import styles from './movie.module.css';
 import { genres } from "../../components/MoviesGrid";
+import noImage from '../../images/no_image.jpg'
 
 
 const Movie = () => {
@@ -14,7 +15,7 @@ const Movie = () => {
   let rating = 0;
   if(data){
     console.log(data);
-    rating = data.vote_average.toFixed(1);
+    rating = data.vote_average ? data.vote_average.toFixed(1) : '-';
   }
   if(error){
     navigate('/404');
@@ -33,7 +34,9 @@ const Movie = () => {
       {loading && <LoadSpinner />}
       {data && (
         <article className={styles.articleContainer}>
-          <div aria-hidden='true' role='presentation' className={styles.moviePoster}><img src={`https://image.tmdb.org/t/p/w1280${data.poster_path}`} alt="" /></div>
+          <div aria-hidden='true' role='presentation' className={styles.moviePoster}>
+            <img src={data.poster_path ? `https://image.tmdb.org/t/p/w1280${data.poster_path}`: noImage} alt="" />
+          </div>
           <section className={styles.movieArticle}>
             <div>
               <div className={styles.movieArticle1}>
@@ -41,14 +44,14 @@ const Movie = () => {
                 <p>{data.tagline || ''}</p>
               </div>
               <div className={styles.movieArticle2}>
-                <p>Genre: <span>{genres[data.genres[0].id]}</span></p>
+                <p>Genre: <span>{data.genres[0] ? genres[data.genres[0].id] : '-'}</span></p>
                 <p>Rating: <span>{rating}</span></p>
-                <p>Release Date: <span>{data.release_date}</span></p>
+                <p>Release Date: <span>{data.release_date || '-'}</span></p>
               </div>
             </div>
             <div className={styles.movieArticle3}>
               <h3>Plot</h3>
-              <p>{data.overview}</p>
+              <p>{data.overview || '-'}</p>
             </div>
           </section>
         </article>

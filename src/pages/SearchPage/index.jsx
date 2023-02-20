@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import {useNavigate, useParams} from 'react-router-dom';
 import LoadSpinner from '../../components/LoadSpinner';
+import MoviesGrid from '../../components/MoviesGrid';
 import SearchMovie from '../../components/SearchMovie';
 import useFetch from '../../hooks/useFetch';
 import styles from './searchPage.module.css';
@@ -33,8 +34,9 @@ const SearchPage = () => {
   }if(data){
     if(data.total_results === 0){
       returned = (NoMovies)
+    }else{
+      returned = (<MoviesGrid movies={data.results} heading={`Search Results for "${moviename}"`}/>)
     }
-    console.log(data, moviename)
   }
 
   return ( 

@@ -24,7 +24,7 @@ const SearchPage = () => {
       <h2>We couldn't find a movie that fit in with your queries</h2>
       <h3>Try:</h3>
       <ul>
-        <li>Going over your search input to be sure it doesn't have a typo</li>
+        <li>Going over your search input to make sure it is free of typos</li>
         <li>Removing or reducing the filters affecting the search results (if you have any enabled)</li>
       </ul>
     </main>

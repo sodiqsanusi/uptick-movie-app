@@ -82,7 +82,22 @@
   cursor: pointer;
 }
 
-
+.dateFilter{
+  padding: 2em 0;
+  color: var(--textColor);
+}
+.rangeContainer{
+  display: flex;
+  flex-direction: column;
+  padding-top: 1em;
+}.rangeContainer input{
+  width: 80%;
+  max-width: 300px;
+}.rangeContainer label{
+  font-size: .85rem;
+  font-weight: 200;
+  font-style: italic;
+}
 
 
 

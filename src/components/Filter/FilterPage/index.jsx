@@ -3,20 +3,25 @@ import styles from './filterPage.module.css';
 import { genres } from '../../MoviesGrid';
 import { useState } from 'react';
 
-const FilterPage = ({setFilterPanel}) => {
-
-  let [year, setYear] = useState(2023);
-
+const FilterPage = ({setFilterPanel, filters, setFilters}) => {
 
   let presentYear = new Date().getFullYear();
+
+  let [year, setYear] = useState(filters[1]);
+  let [genre, setGenres] = useState(filters[0])
+
   let handleClose = () => {
     setFilterPanel(false);
   }
   let handleClear = () => {
-    console.log('All cleared')
+    setFilters([[], presentYear]);
+    setYear(presentYear);
+    setGenres([]);
   }
   let handleApply = () => {
     console.log('Filter preferences applied')
+    setFilters([genre, Number(year)])
+    setFilterPanel(false);
   }
 
   return ( 
@@ -44,7 +49,7 @@ const FilterPage = ({setFilterPanel}) => {
         </div>
         <div className={styles.dateFilter}>
           <h3>Release Date:</h3>
-          <p>{year}</p>
+          <p>Search results will be filtered to movies released before (or on) the year {year}</p>
           <div className={styles.rangeContainer}>
             <input
               type="range" id="release_date" max={`${presentYear}`} min='1892'

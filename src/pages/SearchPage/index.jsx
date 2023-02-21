@@ -1,4 +1,4 @@
-// import { useState } from 'react';
+import { useState } from 'react';
 import {useNavigate, useParams} from 'react-router-dom';
 import Filter from '../../components/Filter';
 import LoadSpinner from '../../components/LoadSpinner';
@@ -9,9 +9,11 @@ import styles from './searchPage.module.css';
 
 const SearchPage = () => {
 
+  let presentYear = new Date().getFullYear();
+
 
   const {moviename} = useParams();
-  // const [results, setResults] = useState([]);
+  const [filters, setFilters] = useState([[], presentYear]);
   // const [returned, setReturned] = useState(undefined);
 
   const API_KEY = process.env.REACT_APP_API_KEY;
@@ -32,18 +34,35 @@ const SearchPage = () => {
   )
   if(error){
     navigate('/404');
-  }if(data){
+  }if(data && filters){
+    //* If the API doesn't return any movie from the search
     if(data.total_results === 0){
       returned = (NoMovies)
-    }else{
-      returned = (<MoviesGrid movies={data.results} heading={`Search Results for "${moviename}"`}/>)
+    }
+    //* If at least one movie was returned from the API after search
+    else{
+      let final = data.results;
+      //* Run checks for individual filters, then use the results in the movie grid
+      if(filters[0].length > 0){
+        console.log('True 1', filters[0])
+      }if(filters[1] !== presentYear){
+        console.log('normal', final)
+        console.log(filters[1])
+        final = final.filter((movie) => {
+          if(!movie.release_date) return true
+          let movie_date = Number(movie.release_date.split('-')[0]);
+          return movie_date <= filters[1];
+        })
+        console.log('filtered' ,final)
+      }
+      returned = final.length > 0 ? (<MoviesGrid movies={final} heading={`Search Results for "${moviename}"`}/>) : (NoMovies)
     }
   }
 
   return ( 
     <>
       <SearchMovie />
-      {data && !loading && returned !== NoMovies && <Filter />}
+      {data && !loading && <Filter filters={filters} setFilters={setFilters}/>}
       {loading && <LoadSpinner />}
       {data && !loading && returned}
     </>

@@ -4,6 +4,7 @@ import useFetch from "../../hooks/useFetch";
 import styles from './movie.module.css';
 import { genres } from "../../components/MoviesGrid";
 import noImage from '../../images/no_image.jpg'
+import { GoChevronLeft } from "react-icons/go";
 
 
 const Movie = () => {
@@ -26,10 +27,10 @@ const Movie = () => {
 
   return (
     <main className={styles.container}>
-      <button
-        className={styles.previousBtn}
-        onClick={handleClick}
-      >Back to previous page</button>
+      <button className={styles.previousBtn} onClick={handleClick}>
+        <GoChevronLeft />
+        <p>Previous Page</p>
+      </button>
       {loading && <LoadSpinner />}
       {data && (
         <article className={styles.articleContainer}>

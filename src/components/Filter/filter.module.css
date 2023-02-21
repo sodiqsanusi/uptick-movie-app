@@ -1,0 +1,40 @@
+.container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  margin: 0 auto 1em;
+}.container p{
+  color: var(--textColor);
+  font-size: 1rem;
+  font-weight: 200;
+  /* display: none; */
+}
+
+.filterBtn{
+  margin-left: auto;
+  padding: 1em 0;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  width: 30%;
+  max-width: 100px;
+  background-color: var(--overlayColor);
+  color: var(--textColor);
+  border: 1px solid transparent;
+  cursor: pointer;
+  font-size: .85rem;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: .3em;
+  font-size: .85rem;
+  font-weight: 200;
+}.filterBtn:hover, .filterBtn:focus{
+  opacity: 0.8;
+  border-color: var(--textColor);
+  outline: initial;
+}.filterBtn svg{
+  min-height: 20px;
+}

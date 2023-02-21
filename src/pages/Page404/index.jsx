@@ -9,12 +9,12 @@ const Page404 = () => {
       <h2>This can be due to various reasons:</h2>
       <ul>
         <li>A bad internet connection.</li>
-        <li>An invalid search input</li>
+        <li>An error from our servers.</li>
       </ul>
       <h2>Try:</h2>
       <ul>
         <li>Making sure your internet connection is stable.</li>
-        <li>Confirming your search input is correct.</li>
+        <li>Reloading the site by clicking on the button below.</li>
       </ul>
       <Link to='/' className={styles.homeBtn}>Go back to homepage</Link>
     </main>

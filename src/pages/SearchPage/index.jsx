@@ -1,4 +1,4 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 import {useNavigate, useParams} from 'react-router-dom';
 import LoadSpinner from '../../components/LoadSpinner';
 import MoviesGrid from '../../components/MoviesGrid';
@@ -10,7 +10,7 @@ const SearchPage = () => {
 
 
   const {moviename} = useParams();
-  const [results, setResults] = useState([]);
+  // const [results, setResults] = useState([]);
   // const [returned, setReturned] = useState(undefined);
 
   const API_KEY = process.env.REACT_APP_API_KEY;
@@ -35,6 +35,7 @@ const SearchPage = () => {
     if(data.total_results === 0){
       returned = (NoMovies)
     }else{
+      console.log(data)
       returned = (<MoviesGrid movies={data.results} heading={`Search Results for "${moviename}"`}/>)
     }
   }

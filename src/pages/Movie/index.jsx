@@ -14,7 +14,6 @@ const Movie = () => {
 
   let rating = 0;
   if(data){
-    console.log(data);
     rating = data.vote_average ? data.vote_average.toFixed(1) : '-';
   }
   if(error){

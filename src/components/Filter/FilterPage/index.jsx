@@ -23,6 +23,16 @@ const FilterPage = ({setFilterPanel, filters, setFilters}) => {
     setFilters([genre, Number(year)])
     setFilterPanel(false);
   }
+  let handleAdding = (id) => {
+    let lilac = [...genre];
+    if(genre.indexOf(id) < 0){
+      lilac.push(id)
+    }else{
+      let position = genre.indexOf(id);
+      lilac.splice(position, 1);
+    }
+    setGenres(lilac);
+  }
 
   return ( 
     <aside className={styles.container}>
@@ -42,7 +52,11 @@ const FilterPage = ({setFilterPanel, filters, setFilters}) => {
             {Object.keys(genres).map( key => (
               <li key={key} className={styles.genreItem}>
                 <label htmlFor={key}>{genres[key]}</label>
-                <input type="checkbox" id={key}/>
+                <input 
+                  type="checkbox" id={key}
+                  checked={genre.indexOf(Number(key)) >= 0}
+                  onChange={() => handleAdding(Number(key))}
+                />
               </li>
             ))}
           </ul>

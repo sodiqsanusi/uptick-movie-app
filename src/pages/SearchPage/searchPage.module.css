@@ -1,0 +1,17 @@
+.container{
+  color: var(--textColor);
+  width: 90%;
+  margin: 0 auto;
+  max-width: 900px;
+}.container h3{
+  font-size: 1rem;
+}.container h2{
+  font-size: 1.25rem;
+  margin: .3em 0;
+}
+.container ul{
+  list-style: square;
+}li{
+  font-weight: 200;
+  font-size: .95rem;
+}

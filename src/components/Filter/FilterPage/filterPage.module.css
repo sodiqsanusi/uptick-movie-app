@@ -53,7 +53,41 @@
   background-color: var(--overlayColor);
   border-radius: 3px;
   padding: 1em .5em;
+  margin-bottom: .3em;
 }
+
+.genreFilter{
+  color: var(--textColor);
+}
+.genreList{
+  list-style: none;
+  padding-left: .3em;
+  padding-top: .5em;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  grid-gap: 1.5em 1em;
+}.genreItem{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 140px;
+}.genreItem label{
+  font-weight: 200;
+  cursor: pointer;
+  font-size: min(.9rem, 95%);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}.genreItem input{
+  cursor: pointer;
+}
+
+
+
+
+
+
+
 
 
 .ending{

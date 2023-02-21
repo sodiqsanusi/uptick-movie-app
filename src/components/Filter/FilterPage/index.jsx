@@ -1,10 +1,14 @@
 import { GoX } from 'react-icons/go';
 import styles from './filterPage.module.css';
 import { genres } from '../../MoviesGrid';
+import { useState } from 'react';
 
 const FilterPage = ({setFilterPanel}) => {
 
+  let [year, setYear] = useState(2023);
 
+
+  let presentYear = new Date().getFullYear();
   let handleClose = () => {
     setFilterPanel(false);
   }
@@ -28,8 +32,8 @@ const FilterPage = ({setFilterPanel}) => {
       </div>
       <form className={styles.filterForm}>
         <div className={styles.genreFilter}>
-          <h3>Genre</h3>
-          <ul>
+          <h3>Genre:</h3>
+          <ul className={styles.genreList}>
             {Object.keys(genres).map( key => (
               <li key={key} className={styles.genreItem}>
                 <label htmlFor={key}>{genres[key]}</label>
@@ -37,6 +41,17 @@ const FilterPage = ({setFilterPanel}) => {
               </li>
             ))}
           </ul>
+        </div>
+        <div className={styles.dateFilter}>
+          <h3>Release Date:</h3>
+          <p>{year}</p>
+          <div className={styles.rangeContainer}>
+            <input
+              type="range" id="release_date" max={`${presentYear}`} min='1892'
+              value={year} onChange={(e) => setYear(e.target.value)}
+            />
+            <label htmlFor="release_date">Slide to change date</label>
+          </div>
         </div>
       </form>
       <div className={styles.ending}>

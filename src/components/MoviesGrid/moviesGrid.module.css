@@ -44,7 +44,10 @@
 .detailsBtn{
   width: 100%;
   margin: 0 auto .5em;
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: .2em;
   color: var(--textColor);
   background-color: var(--overlayColor);
   padding: .75em 0;
@@ -53,4 +56,9 @@
   text-align: center;
 }.detailsBtn:hover, .detailsBtn:focus{
   background-color: var(--bgColor);
+}.detailsBtn svg{
+  width: 10%;
+  min-height: 20px;
+}.detailsBtn p{
+  transform: translateY(1px);
 }

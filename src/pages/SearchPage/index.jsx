@@ -1,5 +1,6 @@
 // import { useState } from 'react';
 import {useNavigate, useParams} from 'react-router-dom';
+import Filter from '../../components/Filter';
 import LoadSpinner from '../../components/LoadSpinner';
 import MoviesGrid from '../../components/MoviesGrid';
 import SearchMovie from '../../components/SearchMovie';
@@ -21,7 +22,7 @@ const SearchPage = () => {
   const navigate = useNavigate();
   let NoMovies = (
     <main className={styles.container}>
-      <h2>We couldn't find a movie that fit in with your queries</h2>
+      <h2>We couldn't find a movie that fit in with the query "{moviename}"</h2>
       <h3>Try:</h3>
       <ul>
         <li>Going over your search input to make sure it is free of typos</li>
@@ -43,6 +44,7 @@ const SearchPage = () => {
   return ( 
     <>
       <SearchMovie />
+      {data && !loading && returned !== NoMovies && <Filter />}
       {loading && <LoadSpinner />}
       {data && !loading && returned}
     </>

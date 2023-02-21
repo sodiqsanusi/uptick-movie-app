@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import styles from './moviesGrid.module.css';
 import noImage from '../../images/no_image.jpg';
+import { GoInfo } from 'react-icons/go';
+
 
  export let genres = {
     28: 'Action',
@@ -44,7 +46,8 @@ const MoviesGrid = ({movies, heading}) => {
                 <p>{genres[movie.genre_ids[0]]}</p>
               </div>
               <Link to={`/movie/${movie.id}`} className={styles.detailsBtn}>
-                  More about the movie
+                  <p>Details</p>
+                  <GoInfo />
               </Link>
             </div>  
           </li>

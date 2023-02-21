@@ -1,0 +1,79 @@
+.container{
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bgColor);
+  min-height: 60vh;
+  width: 100%;
+  z-index: 2;
+  padding-bottom: 1em;
+}.container div{
+  background-color: var(--overlayColor);
+}
+
+.header{
+  display: flex;
+  padding: 1em .5em;
+  align-items: center;
+  column-gap: .5em;
+  color: var(--textColor);
+  border-bottom: .5em solid var(--bgColor);
+}.header button{
+  outline: none;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}.header button:hover, .header button:focus{
+  opacity: 0.8;
+  outline: initial;
+}
+
+.header h2{
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.closeFilterBtn{
+  color: var(--textColor);
+}.closeFilterBtn svg{
+  min-height: 25px;
+}
+
+.clearFilterBtn{
+  margin-left: auto;
+  color: var(--lightTeal);
+}
+
+
+.filterForm{
+  width: 98%;
+  margin: 0 auto;
+  background-color: var(--overlayColor);
+  border-radius: 3px;
+  padding: 1em .5em;
+}
+
+
+.ending{
+  width: 100%;
+  margin-top: auto;
+  padding: .5em 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.resultsBtn{
+  width: 90%;
+  background-color: var(--lightTeal);
+  outline: none;
+  border: none;
+  padding: .5em 0;
+  color: var(--overlayColor);
+  border-radius: 5px;
+  cursor: pointer;
+}.resultsBtn:hover, .resultsBtn:focus{
+  opacity: 0.8;
+}

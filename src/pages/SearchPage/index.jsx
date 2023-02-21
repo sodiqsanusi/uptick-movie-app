@@ -36,7 +36,6 @@ const SearchPage = () => {
     if(data.total_results === 0){
       returned = (NoMovies)
     }else{
-      console.log(data)
       returned = (<MoviesGrid movies={data.results} heading={`Search Results for "${moviename}"`}/>)
     }
   }

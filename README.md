@@ -1,70 +1,83 @@
-# Getting Started with Create React App
+# Uptick Technical Assessment Solution (Frontend Track)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a solution to the [frontend technical assessment](./uptickAssessment.pdf) for the Uptick Fellowship.
 
-## Available Scripts
+## Table of contents
 
-In the project directory, you can run:
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
-### `yarn start`
+## Overview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+This was, well, impromptu. Saw the mail for the assessment late, had to panic-build at a point but anyways that's that. The goal was to build a web application that had the requirements specified in the prompt document. I also had to think of how the interface would look like, which honestly isn't my strong forte (design isn't easy fr😪), thankfully there were a lot of apps/interfaces I took inspiration from while building. Hopefully the app doesn't look like sh**.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### The challenge
 
-### `yarn test`
+Users should be able to:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Search for and view information about movies
+- Be able to filter the gotten search results by genre and release date
+- View the optimal layout for the interface depending on their device's screen size
+- See the results in user-friendly format
 
-### `yarn build`
+> It was also necessary that I get the data for the movies from a public API (no hardcoded data!)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Screenshot
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![](./uptickMovie1.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Links
 
-### `yarn eject`
+- Solution URL: [https://github.com/sodiqsanusi/uptick-movie-app/](https://github.com/sodiqsanusi/uptick-movie-app/)
+- Live Site URL: [https://uptickmovies.netlify.app/](https://uptickmovies.netlify.app/)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## My process
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+As usual, almost same workflow with slight differentiations:
+1. Sketched out the HTML structure & a rough components overview of the site on paper.
+2. Used the `create-react-app` command to get a boilerplate React application. (`npx` was giving me issues, had to use yarn. which wasn't bad btw)
+3. Wrote the HTML/JSX for the top-level components that were important in the overall app.
+4. Started styling for mobile/small screen devices *(had loads of problems with styling. Again, design is key to a good project)*.
+5. Made the site responsive for large screen devices.
+6. Tweaked styles, then worked on functionalities *(the filter functionality took some time too😩)*.
+7. Used Lighthouse tool to check for possible improvements, then tweaked things using the gotten feedback.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Built with
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Flexbox
+- CSS Grid
+- Mobile-first workflow
+- CSS Modules
+- [React](https://reactjs.org/) - Javascript library moonlighting as a framework👀
+- [React-router-dom](https://reactrouter.com/) - Used for changing pages in the React virtual DOM
 
-## Learn More
+### What I learned
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+First of, it became obvious that even after panic, you just have to build at the end. Building this app was quite interesting because, well, I was on a restricted timeframe, had to attend classes, was thinking up on how the interface would look like and still getting feedback on how well the app was following the prompt.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Havn't built anything like that filter component, so I guess it was a learning experience😅. Enjoyed building it out though.
 
-### Code Splitting
+### Continued development
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+More apps to build! Also planning to get more fullstacky, maybe learn a bit of Node & Express with some database management systems. Doesn't have to be deep sha, just surface-level knowledge.
 
-### Analyzing the Bundle Size
+### Useful resources
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- [The Movie Database API](https://developers.themoviedb.org/3/getting-started/introduction/) - The public API I used in building the application, the docs were super helpful and self-explanatory.
 
-### Making a Progressive Web App
+## Author
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Twitter - [@sodiqsanusi_](https://www.twitter.com/sodiqsanusi_)
 
-### Advanced Configuration
+## Acknowledgments
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Like I said earlier, saw the assessment email late, and panicked. Sarfo & Orin helped me calm down and actually do something lol, will really miss having these guys around. Ciao🤞🏾

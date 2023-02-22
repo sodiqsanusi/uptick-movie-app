@@ -1,6 +1,7 @@
 .container{
   color: var(--textColor);
   width: 90%;
+  max-width: 1150px;
   margin: 0 auto;
 }.container ul{
   padding: 0;

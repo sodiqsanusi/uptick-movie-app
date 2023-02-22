@@ -16,6 +16,7 @@
   font-size: .95rem;
 }.container a{
   width: 100%;
+  max-width: 400px;
   margin: 1em auto .5em;
   display: block;
   color: var(--textColor);
@@ -28,4 +29,14 @@
 }.container a:hover, .container a:focus{
   border-color: var(--textColor);
   opacity: 0.8;
+}
+
+@media(min-width: 700px){
+  .container{
+    margin-right: auto;
+    margin-left: 8%;
+  }.container a{
+    margin-right: auto;
+    margin-left: 0%;
+  }
 }

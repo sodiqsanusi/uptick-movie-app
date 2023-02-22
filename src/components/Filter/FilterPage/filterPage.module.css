@@ -116,6 +116,7 @@
 
 .resultsBtn{
   width: 90%;
+  max-width: 300px;
   background-color: var(--bgColor);
   outline: none;
   border: none;

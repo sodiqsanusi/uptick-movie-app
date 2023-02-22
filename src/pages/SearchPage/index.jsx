@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import {useNavigate, useParams} from 'react-router-dom';
+import {Link, useNavigate, useParams} from 'react-router-dom';
 import Filter from '../../components/Filter';
 import LoadSpinner from '../../components/LoadSpinner';
 import MoviesGrid from '../../components/MoviesGrid';
@@ -13,6 +13,7 @@ const SearchPage = () => {
 
 
   const {moviename} = useParams();
+  //todo: By putting the filters here, it resets after each SearchPage load. move it to a global shared state?
   const [filters, setFilters] = useState([[], presentYear]);
   const [isFilterPageActive, setFilterPage] = useState(false);
 
@@ -30,6 +31,7 @@ const SearchPage = () => {
         <li>Going over your search input to make sure it is free of typos</li>
         <li>Removing or reducing the filters affecting the search results (if you have any enabled)</li>
       </ul>
+      <Link to='/'>To Homepage</Link>
     </main>
   )
   if(error){

@@ -46,7 +46,7 @@ const MoviesGrid = ({movies, heading}) => {
                 <p>{genres[movie.genre_ids[0]]}</p>
               </div>
               <Link to={`/movie/${movie.id}`} className={styles.detailsBtn}>
-                  <p>Details</p>
+                  <p>More info</p>
                   <GoInfo />
               </Link>
             </div>  

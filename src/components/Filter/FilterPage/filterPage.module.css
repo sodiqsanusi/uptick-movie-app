@@ -116,11 +116,11 @@
 
 .resultsBtn{
   width: 90%;
-  background-color: var(--lightTeal);
+  background-color: var(--bgColor);
   outline: none;
   border: none;
   padding: .5em 0;
-  color: var(--overlayColor);
+  color: var(--textColor);
   border-radius: 5px;
   cursor: pointer;
 }.resultsBtn:hover, .resultsBtn:focus{

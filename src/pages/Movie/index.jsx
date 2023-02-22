@@ -2,7 +2,6 @@ import { useNavigate, useParams } from "react-router-dom";
 import LoadSpinner from "../../components/LoadSpinner";
 import useFetch from "../../hooks/useFetch";
 import styles from './movie.module.css';
-import { genres } from "../../components/MoviesGrid";
 import noImage from '../../images/no_image.jpg'
 import { GoChevronLeft } from "react-icons/go";
 

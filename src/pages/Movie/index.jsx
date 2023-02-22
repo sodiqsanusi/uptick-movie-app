@@ -2,7 +2,6 @@ import { useNavigate, useParams } from "react-router-dom";
 import LoadSpinner from "../../components/LoadSpinner";
 import useFetch from "../../hooks/useFetch";
 import styles from './movie.module.css';
-import { genres } from "../../components/MoviesGrid";
 import noImage from '../../images/no_image.jpg'
 import { GoChevronLeft } from "react-icons/go";
 
@@ -14,8 +13,11 @@ const Movie = () => {
   const {data, loading, error} = useFetch(`https://api.themoviedb.org/3/movie/${movie}?api_key=a292bc849e626064fe771d6c1c1ae60f&language=en-US`);
 
   let rating = 0;
+  let genreNames = '-'
   if(data){
     rating = data.vote_average ? data.vote_average.toFixed(1) : '-';
+    //* Mapping through the genres of the movie so I can get a string to display
+    genreNames = data.genres[0] ? data.genres.map(genre => genre.name).join(', ') : '-';
   }
   if(error){
     navigate('/404');
@@ -44,7 +46,7 @@ const Movie = () => {
                 <p>{data.tagline || ''}</p>
               </div>
               <div className={styles.movieArticle2}>
-                <p>Genre: <span>{data.genres[0] ? genres[data.genres[0].id] : '-'}</span></p>
+                <p>Genre: <span>{genreNames}</span></p>
                 <p>Rating: <span>{rating}</span></p>
                 <p>Release Date: <span>{data.release_date || '-'}</span></p>
               </div>

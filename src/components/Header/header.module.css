@@ -1,10 +1,14 @@
 .container{
+  background-color: var(--overlayColor);
+  padding: 1em .5em;
+}.wrapper{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: var(--overlayColor);
-  padding: 1em .5em;
-}.container a{
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.container a{
   text-decoration: none;
   color: var(--textColor);
   font-size: min(6vw, 1.5rem);

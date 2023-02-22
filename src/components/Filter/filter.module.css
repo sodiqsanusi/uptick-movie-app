@@ -3,13 +3,13 @@
   align-items: center;
   justify-content: space-between;
   width: 90%;
+  max-width: 1150px;
   margin: 0 auto 1em;
   position: relative;
 }.container p{
   color: var(--textColor);
   font-size: 1rem;
   font-weight: 200;
-  /* display: none; */
 }
 
 .filterBtn{

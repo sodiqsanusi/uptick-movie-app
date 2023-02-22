@@ -1,11 +1,11 @@
 import styles from './filter.module.css';
 import {GoSettings} from 'react-icons/go';
-import { useState } from 'react';
+// import { useState } from 'react';
 import FilterPage from './FilterPage';
 
-const Filter = ({filters, setFilters}) => {
+const Filter = ({filters, setFilters, isFilterPageActive, setFilterPage}) => {
 
-  let [isFilterPageActive, setFilterPage] = useState(false);
+  // let [isFilterPageActive, setFilterPage] = useState(false);
   let presentYear = new Date().getFullYear();
 
   let handleClick = () => {
@@ -14,7 +14,7 @@ const Filter = ({filters, setFilters}) => {
 
   return ( 
     <section className={styles.container}>
-      <p>{filters[0].length === 0 && filters[1] === presentYear ? 'No filter enabled' : 'Filters are being used'}</p>
+      <p>{filters[0].length === 0 && filters[1] === presentYear ? 'No filter enabled' : 'Filter preferences applied'}</p>
       <button className={styles.filterBtn} onClick={handleClick} aria-label='Click to open the filter panel'>
         <GoSettings />
       </button>

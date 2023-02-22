@@ -19,7 +19,6 @@ const FilterPage = ({setFilterPanel, filters, setFilters}) => {
     setGenres([]);
   }
   let handleApply = () => {
-    console.log('Filter preferences applied')
     setFilters([genre, Number(year)])
     setFilterPanel(false);
   }
@@ -66,7 +65,7 @@ const FilterPage = ({setFilterPanel, filters, setFilters}) => {
           <p>Search results will be filtered to movies released before (or on) the year {year}</p>
           <div className={styles.rangeContainer}>
             <input
-              type="range" id="release_date" max={`${presentYear}`} min='1892'
+              type="range" id="release_date" max={`${presentYear}`} min='1950'
               value={year} onChange={(e) => setYear(e.target.value)}
             />
             <label htmlFor="release_date">Slide to change date</label>
